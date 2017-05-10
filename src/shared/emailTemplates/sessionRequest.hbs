@@ -1,0 +1,81 @@
+   <!DOCTYPE html>
+    <html>
+    <body>
+    <style>
+  body {
+  background-color: #34495e;
+  font-family: 'Lato', sans-serif;
+}
+body main {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #18232f;
+  height: 300px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+body main h2 {
+  padding: 15px;
+  color: #1abc9c;
+}
+body main p {
+  padding-left: 15px;
+  color: white;
+}
+body main a {
+  padding: 15px 10px 0 10px;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  color: #1abc9c;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 150;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  font-size: 1em;
+}
+body main a::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  content: '';
+  opacity: 0;
+  -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+  transition: height 0.3s, opacity 0.3s, transform 0.3s;
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  transform: translateY(10px);
+}
+body main a.accept::after {
+  background: #fff;
+}
+body main a.deny::after {
+  background: #e74c3c;
+}
+body main a:hover::after, body main a:focus::after {
+  height: 2px;
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  -moz-transform: translateY(5px);
+  transform: translateY(5px);
+}
+</style>
+<main>
+  <div class = "course">
+    <h2>Session Request</h2>
+    <p>You've got a request from {{name}} for the {{course}} course.<p>
+    <p>With the following messege: </p>
+    <p>{{message}}</p>
+    <p>Their email: {{email}} </p>
+    <a href="#"class="accept">Accept request</a> 
+    <a href="#" class="deny"> Deny request</a>
+  </div>
+</main>
+</body>
+</html>

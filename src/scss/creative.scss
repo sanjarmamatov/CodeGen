@@ -1,0 +1,56 @@
+@import "variables.scss";
+@import "mixins.scss";
+@import "card.scss";
+@import "sierra/sierra.scss";
+@import "loader.scss";
+@import "project.scss";
+@import "banner.scss";
+@import "links.scss";
+@import "nav.scss";
+@import "course.scss";
+body {
+	overflow-x: hidden;
+	transition: 0.3s ease-in-out;
+	&.menu-open {
+		transition: 0.3s ease-in-out;
+		right: 12em;
+	}
+}
+
+.Hero {
+    h2,h3 {
+        color: $gray-dark;
+        font-weight: bold;
+    }
+
+    padding: 9em;
+    background-image: url("/static/images/coding.png");
+    background-size: cover;
+}
+
+
+
+.row {
+    padding:15px;
+}
+.typed-cursor{
+	opacity: 1;
+	-webkit-animation: blink 0.7s infinite;
+	-moz-animation: blink 0.7s infinite;
+	animation: blink 0.7s infinite;
+}
+@keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+@-moz-keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}

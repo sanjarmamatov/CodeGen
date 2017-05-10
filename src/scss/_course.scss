@@ -1,0 +1,29 @@
+
+.Course {
+    width: 100%;
+    padding-left: 0;
+    padding-right:0;
+    height: auto;
+    .content {
+
+        background-color: #64829F; 
+        margin:2em;
+        opacity: 0.8;
+    }
+
+}
+.course-banner {
+    height:20em;
+    width:100%;
+    .container {
+        float: left;
+        width: 50%;
+    }
+    img {
+        float:right;
+        width: auto;
+        padding-right: 10em;
+        padding-bottom: 5em;
+
+    }
+}
