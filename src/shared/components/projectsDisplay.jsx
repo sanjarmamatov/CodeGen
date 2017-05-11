@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Animate from 'react-move'
 import $ from 'jquery'
 
 const ProjectsDisplay = () =>

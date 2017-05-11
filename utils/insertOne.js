@@ -1,7 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
-var ObjectId = require('mongodb').ObjectID;
-var url = 'mongodb://localhost:27017/test';
+const fs = require('fs')
+
 const PythonX = {
   name: 'Python x Minecraft',
   shortDes: "Python is powerful... and fast; plays well with others; runs everywhere; is friendly & easy to learn; is Open.",
@@ -60,20 +60,29 @@ const Java = {
   skills: [{ name: "Java", imgURL: "Java.png" }],
   instructors: ["Sanjar", "Maksat"]
 
-   }
+}
 
-var insertDocument = function(db, callback) {
-   db.collection('courses').insertOne(Java, function(err, result) {
-    assert.equal(err, null);
-    console.log("Inserted a document into the restaurants collection.");
-    console.log("The _id of the inserted document is "+result.insertedId);
-    callback();
-  });
-};
+// var insertDocument = function(db, callback) {
+//    db.collection('courses').insertOne(Java, function(err, result) {
+//     assert.equal(err, null);
+//     console.log("Inserted a document into the restaurants collection.");
+//     console.log("The _id of the inserted document is "+result.insertedId);
+//     callback();
+//   });
+// };
 
-MongoClient.connect(url, function(err, db) {
-  assert.equal(null, err);
-  insertDocument(db, function() {
-      db.close();
-  });
-});
+// MongoClient.connect(url, function(err, db) {
+//   assert.equal(null, err);
+//   insertDocument(db, function() {
+//       db.close();
+//   });
+// });
+const courses = {
+  PythonX,
+  Unity,
+  Java,
+}
+
+fs.writeFile('../src/server/mockData.json', JSON.stringify(courses), (err) => {
+  console.log(err)
+})
