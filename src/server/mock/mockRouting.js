@@ -29,7 +29,7 @@ function loadHomeData() {
 }
 
 function loadCoursesData(course: String) {
-  return getCourse(name) // add projects in here as well
+  return getCourse(course) // add projects in here as well
 }
 
 export default router

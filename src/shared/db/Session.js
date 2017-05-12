@@ -5,8 +5,6 @@ import path from 'path'
 import { Employees } from '../config'
 import sendEmail from '../../server/email'
 
-console.log('Employees: '+ Employees)
-
 const SessionSchema = mongoose.Schema({
   name: String,
   email: String,
