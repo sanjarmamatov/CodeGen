@@ -8,7 +8,6 @@ import Session from '../shared/db/Session'
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  console.log('homepage route triggered')
   loadHomeData()
             .then(data =>
               res.send(renderApp(req.url, data)))
@@ -17,7 +16,6 @@ router.get('/', (req, res) => {
 })
 
 router.get('/courses/:course', (req, res) => {
-  console.log('\n course route triggered, course param: ' + capitalizeFirstLetter(req.params.course))
   loadCoursesData(capitalizeFirstLetter(req.params.course))
                 .then(data => {
               console.log('/courses route : ' + JSON.stringify(data))

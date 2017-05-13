@@ -29,12 +29,12 @@ app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-
 app.use(compression())
 app.use(STATIC_PATH, express.static('public'))
     // Use bluebird
-mongoose.connect(isProd ? 'mongodb://localhost:27017/real' : 'mongodb://localhost:27017/test')
-mongoose.Promise = require('bluebird')
 
 if (isProd) {
   app.use('/', realRouter)
   app.use('/api', realApiRouter)
+  mongoose.connect('mongodb://localhost:27017/real')
+  mongoose.Promise = require('bluebird')
 } else {
   app.use('/', mockRouter)
   app.use('/api', mockApiRouter)
