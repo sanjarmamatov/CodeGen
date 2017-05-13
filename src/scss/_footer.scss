@@ -1,6 +1,11 @@
 .Footer {
     height: 15em;
-    background-color: #64829f;
+    padding: 1.5em;
+    h1 {
+        font-weight: 500;
+        color: $brand-primary;
+    }
+    background-color: #18232f;
         ul li a , a{
             color: #fff;
         }

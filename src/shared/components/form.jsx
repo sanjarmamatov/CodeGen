@@ -77,7 +77,7 @@ class Form extends React.Component {
 
     render() {
         return( 
-            <div className="container">
+            <div className="Form container">
                 <h2 className="text-big">Send a request.</h2>
                 <div className="row">
                     <div className="col-xs-12 col-md-6">

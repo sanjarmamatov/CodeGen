@@ -5827,6 +5827,19 @@ nav a:focus {
     padding-right: 10em;
     padding-bottom: 5em; }
 
+.Footer {
+  height: 15em;
+  padding: 1.5em;
+  background-color: #18232f; }
+  .Footer h1 {
+    font-weight: 500;
+    color: #1abc9c; }
+  .Footer ul li a, .Footer a {
+    color: #fff; }
+  .Footer hr {
+    background: transparent;
+    display: none; }
+
 body {
   overflow-x: hidden;
   transition: 0.3s ease-in-out; }
@@ -5842,7 +5855,7 @@ body {
     color: #333333;
     font-weight: bold; }
 
-.row {
+.Form {
   padding: 15px; }
 
 .typed-cursor {
