@@ -34,7 +34,7 @@ export default {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ minimize: true }),
+    //new webpack.optimize.UglifyJsPlugin({ minimize: true }),
 
   ],
 }

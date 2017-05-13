@@ -5748,24 +5748,25 @@ nav a:focus {
   transform: translateX(0px); }
 
 .navbar {
+  transition: 0.3s ease-in-out;
   background: transparent;
   background-image: none;
   border-color: transparent;
   box-shadow: none;
-  position: fixed;
-  transition: 0.3s ease-in-out; }
+  position: fixed; }
   .navbar .container-fliud {
     height: 3em; }
-  .navbar .dropdown-toggle, .navbar .dropdown-toggle:hover {
-    background: transparent; }
   .navbar.off-top {
     transition: 0.3s ease-in-out;
     height: 5em;
     background-color: #64829f; }
-    .navbar.off-top .dropdown-menu, .navbar.off-top .dropdown-toggle, .navbar.off-top .dropdown-toggle:hover {
+    .navbar.off-top .dropdown-menu, .navbar.off-top .dropdown-toggle:hover, .navbar.off-top .dropdown-toggle:focus {
+      transition: 0.6s ease-in-out;
       background-color: #64829f; }
     .navbar.off-top ul li a, .navbar.off-top a {
       color: #fff; }
+    .navbar.off-top ul li a {
+      background: transparent; }
     .navbar.off-top hr {
       background: transparent;
       display: none; }

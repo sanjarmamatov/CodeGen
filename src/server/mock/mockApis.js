@@ -27,12 +27,24 @@ function capitalizeFirstLetter(string) {
 export function getCourse(name) {
     const rawJSON = fs.readFileSync(__dirname + '/mockCourses.json', 'utf-8'),
         data = JSON.parse(rawJSON)
-    return name ? [data[name]] : [data]
+        if (name) {
+            for (const course of data) {
+                if (course.name === name) return [course]
+            }
+        } else {
+            return data
+        }
 }
 export function getProjects(name) {
     const rawJSON = fs.readFileSync(__dirname + '/mockProjects.json', 'utf-8'),
         data = JSON.parse(rawJSON)
-    return name ? [data[name]] : [data]
+        if (name) {
+            for (const project of data) {
+                if (project.name === name) return project
+            }
+        } else {
+            return data
+        }
 }
 
 

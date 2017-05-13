@@ -10,9 +10,10 @@ import Course from '../components/course'
 class CoursesPage extends React.Component {
   constructor(props) {
     super(props)
-    console.log('CoursePage rendered')
+    console.log('@CoursePage '+this.props.route)
     this.state = {
-      course: this.props.course 
+      course: this.props.course,
+      style: this.props.style,
     }
   }
   componentDidMount() {
@@ -26,11 +27,11 @@ class CoursesPage extends React.Component {
   render() {
     if (this.state.course) {
       return (
-        <div>
+        <div style={this.state.style}>
         <div style={{ height: '7em', backgroundColor: '#fff' }}></div>
           <NavComponent routes={this.props.courseRoutes} />
           <Course course={this.state.course[0]} />
-          <Form>
+          <Form defaultValue={this.state.course[0].name}>
           </Form>
           <Footer />
         </div>

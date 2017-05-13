@@ -11,11 +11,19 @@ import AppComponent from '../shared/app'
 import { APP_CONTAINER_SELECTOR } from '../shared/config'
 
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR)
+const loc = window.location.href
+let indicies = []
 
+for (const i in loc) {
+  if (loc[i] === '/') indicies.push(i)
+}
+const path = loc.slice(indicies[2])
+
+console.log('@index.jsx '+ path)
 const wrapApp = App =>
   <BrowserRouter>
     <AppContainer>
-      <App />
+      <App path={path} />
     </AppContainer>
   </BrowserRouter>
 

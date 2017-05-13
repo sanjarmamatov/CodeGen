@@ -1,10 +1,11 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 
 class CoursesDisplay extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
-        console.log('@coursesdisplay' + this.props.courses)
+        console.log('@coursesdisplay' + JSON.stringify(this.props.courses[0].URL))
     }
   render() {
     return (
@@ -12,14 +13,13 @@ class CoursesDisplay extends React.Component {
         <h1 className='text-big'>Our Courses.</h1>
         <div className="aligner-space-around">
                 { this.props.courses.map( course => 
-
-            <div key={course.name}className="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div key={course.name} className="col-sm-6 col-md-4 col-lg-3 mt-4">
                 <div className="card">
                     <img className="card-img-top" src={course.imgURL} />
                     <div className="card-block">
                         <h4 className="card-title card-text">{course.name}</h4>
                         <div className="meta">
-                            <a href="#">View Course</a>
+                          <NavLink to={course.URL} exact>View Course</NavLink>
                         </div>
                         <div className="card-text">
                             {course.shortDes}
@@ -33,7 +33,7 @@ class CoursesDisplay extends React.Component {
             </div>
                 )}
              </div>
-            </div>    
+        </div>    
             )
     }
 }

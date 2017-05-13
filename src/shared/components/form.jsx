@@ -104,7 +104,7 @@ class Form extends React.Component {
                     <div className="col-xs-12 col-md-6">
                         <label className="label" htmlFor="Course">Course</label>
                         <div className="select">
-                            <select defaultValue="Unity" id="Course">
+                            <select defaultValue={this.props.defaultValue ? this.props.defaultValue : 'Python X Minecraft'} id="Course">
                                 <option>Python X Minecraft</option>
                                 <option>Unity</option>
                                 <option>Java</option>

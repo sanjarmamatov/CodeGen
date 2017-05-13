@@ -18,7 +18,7 @@ const renderApp = (location: string, data: Object) => {
 
   const reactHtml = ReactDOMServer.renderToString(
     <StaticRouter location={location} context={context}>
-      <AppComponent courses={data} routes={COURSE_ROUTES} />
+      <AppComponent courses={data} routes={COURSE_ROUTES} path={location} />
     </StaticRouter>
 
   )

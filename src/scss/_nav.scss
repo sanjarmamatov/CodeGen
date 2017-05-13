@@ -1,26 +1,26 @@
 .navbar {
+    transition: 0.3s ease-in-out;
     background:transparent;
     background-image:none;
     border-color:transparent;
     box-shadow:none;
     position: fixed;
-    transition: 0.3s ease-in-out;
     .container-fliud {
         height:3em;
-    }
-    .dropdown-toggle, .dropdown-toggle:hover  {
-            background:transparent;
     }
     &.off-top {
         transition: 0.3s ease-in-out;
         height: 5em;
-
         background-color: #64829f;
-        .dropdown-menu,.dropdown-toggle, .dropdown-toggle:hover {
+        .dropdown-menu, .dropdown-toggle:hover, .dropdown-toggle:focus {
+            transition: 0.6s ease-in-out;
             background-color: #64829f;
         }
         ul li a , a{
             color: #fff;
+        }
+        ul li a {
+            background: transparent;
         }
         hr {
             background: transparent;
