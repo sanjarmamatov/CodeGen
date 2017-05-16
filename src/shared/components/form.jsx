@@ -1,37 +1,21 @@
 // @flow
 import React from 'react'
-import $ from 'jquery'
 
-function displaySuccess(xhr, status) {
-  console.log('session request sent' + status)   
-}
-function displayError(xhr) {
-  alert("Please check that you staisfied all the conditions")
-  console.log('Huyna poluchilas' + xhr)
-}
-function sendSessionRequest() {
-  const sessionInfo = {
-    name: $('#name').val(),
-    email: $('#email').val(),
-    course: $('#Course').val(),
-    message: $('#message').val(),
-  }
-  $.ajax({
-    url: '/sessionRequest',
-    type: 'POST',
-    async: true,
-    data: sessionInfo,
-    complete: displaySuccess,
-    error: displayError,
-  })
-}
 
 class Form extends React.Component {
       state: {
           name: {valid: boolean ,value: string},
           email: {valid: boolean ,value: string},
           message: {valid: boolean ,value: string},
+          handleSubmit: Function,
     }
+    static displaySuccess(xhr, status) {
+     console.log('session request sent' + status)   
+    }
+    static displayError(xhr) {
+        alert("Please check that you staisfied all the conditions")
+        console.log('Huyna poluchilas' + xhr)
+    } 
     
     constructor(props){
         super(props)
@@ -41,10 +25,7 @@ class Form extends React.Component {
             message: { valid: true, value: '' },
         }
         this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
     }
-
-
 
     handleChange(event: Object) {
 
@@ -58,20 +39,11 @@ class Form extends React.Component {
     }
 
 
-
-    handleSubmit(event){
-      this.state.name.valid && this.state.email.valid && this.state.message.valid ? sendSessionRequest() : displayError()
-    }
-
-
-
     checkValidity(name: String, text: String) {
-       if (name === 'message'){
-           return text.length >= 140 
-       } else if (name === 'name') {
-           return text.split(' ').length >= 2 
-       } else if (name === 'email') {
+        if (name === 'email') {
            return text.indexOf('@') !== -1 && text.indexOf('.') !== -1 && text.length >= 5
+       } else {
+           return true
        }
     }
 
@@ -123,7 +95,7 @@ class Form extends React.Component {
                 }
                 </div>
                 <div className="row"></div>
-                <button onClick={this.handleSubmit} className="button button-big button-primary block-mobile">Send request</button>
+                <button onClick={this.props.handleSubmit} className="button button-big button-primary block-mobile">Send request</button>
             </div>
         )}
 }

@@ -11,6 +11,7 @@ const Banner = () =>
         </div>
     </div>
 
+
 if (typeof window !== 'undefined') {
     $(() => {
             const options = {
