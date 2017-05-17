@@ -1,0 +1,16 @@
+
+Short term:
+    Integrate:
+        badges
+        react-helmet
+        get rid of validity check for name and message in the Form add Number field
+        initRenderData
+            - distinguish between a link directly to a server and navigation in the cleint code in the APPCOMPONENT
+            - if its a request to a server serve it up with a 
+
+Long Term:
+    prepack : not ready, lib is too young to get used in production
+    Implement react-motion
+    instagram API
+    JSS
+

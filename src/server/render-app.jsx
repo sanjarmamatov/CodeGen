@@ -45,9 +45,7 @@ const renderApp = (location: string, data: Object) => {
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
         <script src="/static/js/typed.min.js"></script>
-        
         <script src="${isProd ? STATIC_PATH : `http://localhost:${WDS_PORT}/public`}/js/bundle.js"></script>
-
       </body>
     </html>`
   )
